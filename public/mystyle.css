@@ -1,0 +1,24 @@
+.kanit{
+    font-family: 'kanit',sans-serif;
+}
+.navme{
+    background-color:deeppink;
+    font-family: 'kanit',sans-serif;
+}
+img.logo{
+    height: 40px;
+    width: 40px;
+}
+.nav-above{
+    margin-top: 1em;
+}
+.dropdown-item:active{
+    background-color: dimgrey;
+}
+div.maincard{
+    width:300px;
+}
+div.flex3{
+    display: flex;
+    flex-wrap: wrap;
+}
