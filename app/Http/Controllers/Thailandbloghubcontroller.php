@@ -13,15 +13,15 @@ Class Thailandbloghubcontroller extends Controller
 
         public function index(){
             //recieve data
-            $science = DB::table('01sc')->orderBy('id','DESC')->get();
-            $it = DB::table('02it')->orderBy('id','DESC')->get();
-            $travel = DB::table('03tr')->orderBy('id','DESC')->get();
-            $business = DB::table('04bi')->orderBy('id','DESC')->get();
-            $education = DB::table('05ed')->orderBy('id','DESC')->get();
-            $entertain = DB::table('06et')->orderBy('id','DESC')->get();
-            $homegarden=DB::table('07hg')->orderBy('id','DESC')->get();
-            $news=DB::table('08ne')->orderBy('id','DESC')->get();
-            $other=DB::table('09ot')->orderBy('id','DESC')->get();
+            $science = DB::table('01sc')->orderBy('id','DESC')->take(5)->get();
+            $it = DB::table('02it')->orderBy('id','DESC')->take(5)->get();
+            $travel = DB::table('03tr')->orderBy('id','DESC')->take(5)->get();
+            $business = DB::table('04bi')->orderBy('id','DESC')->take(5)->get();
+            $education = DB::table('05ed')->orderBy('id','DESC')->take(5)->get();
+            $entertain = DB::table('06et')->orderBy('id','DESC')->take(5)->get();
+            $homegarden=DB::table('07hg')->orderBy('id','DESC')->take(5)->get();
+            $news=DB::table('08ne')->orderBy('id','DESC')->take(5)->get();
+            $other=DB::table('09ot')->orderBy('id','DESC')->take(5)->get();
             //return data
             return view('index')
             ->with('title','projectsb 01sc')
@@ -49,7 +49,6 @@ Class Thailandbloghubcontroller extends Controller
             $describe=$request->input('describe');
             $user=$request->input('user');
             $userid=$request->input('userid');
-
             DB::table($catagory)->insert(
                 ['title'=>$title,
                 'blogtitle'=>$blogtitle,
@@ -58,7 +57,7 @@ Class Thailandbloghubcontroller extends Controller
                 'auther'=>$user,
                 'autherid'=>$userid]
             );
-            return view('index');
+            return Redirect::to('/');
         }
 
 }

@@ -16,9 +16,13 @@ img.logo{
     background-color: dimgrey;
 }
 div.maincard{
-    width:300px;
+    width:250px;
+    margin:0.25em;
 }
 div.flex3{
     display: flex;
     flex-wrap: wrap;
+}
+.headsection{
+    margin:0.5em;
 }

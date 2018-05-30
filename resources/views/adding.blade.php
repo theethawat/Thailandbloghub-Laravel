@@ -4,7 +4,7 @@
     @guest
     <p>กรุณาลงชื่อเข้าใช้ หรือ ลงทะเบียน  <a href="{{route('login')}}">คลิก</a></p>
     @else
-    <form  action="addissue" method="POST" role="form">
+    <form  action="addissue" method="POST" role="form" >
         <label class="kanit">ชื่อบทความ</label>
         <input type="text" name="title" id="title" class="form-control" placeholder="ใส่ชื่อบทความของท่าน"required autofocus>
         <div class="form-row">
@@ -34,7 +34,8 @@
         <textarea class="form-control" name="describe" id="describe" rows="3"></textarea>
         <input type="text" name="user" id="user" value="{{Auth::user()->name}}" hidden>
         <input type="text" name="userid" id="userid" value="{{Auth::user()->id}}" hidden>
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}"><br>
+            
         <button type="submit" class="btn btn-primary kanit" style="margin-top:1em;">เพิ่มบทความ</button>
     </form>
     @endguest
