@@ -35,19 +35,20 @@
             }(document, 'script', 'facebook-jssdk'));</script>
 
             <div class="col col-sm-3">
-            <h6 class="kanit" style="margin-top:1em;">ข้อมูลผู้ใช้งาน</h6><hr>
+            <h6 class="kanit" style="margin-top:1em;"> <i class="fas fa-user"></i> ข้อมูลผู้ใช้งาน</h6><hr>
             @guest
             <p>กรุณาลงชื่อเข้าใช้หรือลงทะเบียน</p>
             @else
             <div class="card">
                 <div class="card-body">            
-                        <h6 class="kanit"> ยินดีต้อนรับ <br>  
+                        <b><h6> ยินดีต้อนรับ</b> <br>  
                          {{ Auth::user()->name }}
                          </h6> 
                 </div>
             </div>    
                         @endguest
-            <h5 class="kanit"  style="margin:1em;">อย่าลืมถูกใจเพจของเรานะ</h5><hr>
+            <br>
+            <h6 class="kanit"> <i class="fab fa-facebook-square"></i> อย่าลืมถูกใจเพจของเรานะ</h6><hr>
             <!--facebook-->
             <div style="margin-bottom:1em;"class="fb-page"data-href="https://www.facebook.com/thailandbloghub" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/thailandbloghub" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/thailandbloghub">Thailand Blog Hub</a></blockquote></div>
             <!-- Grey navigation panel -->

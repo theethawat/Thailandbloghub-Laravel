@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/adding', 'ThailandbloghubController@adding');
 Route::get('/', 'ThailandbloghubController@index');
 Route::post('/addissue', 'ThailandbloghubController@addissue');
+
+
+Route::get('/catagory/{cat}','Thailandbloghubcontroller@catagorylist');

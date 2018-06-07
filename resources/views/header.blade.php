@@ -1,6 +1,7 @@
 @section("header")
-<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark navme">
-  <a class="navbar-brand" href="#"><img class="logo" src="{{URL::asset('photomain/logo_tbh.png')}}">ไทยแลนด์บล็อกฮับ</a>
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark  bg-dark navme">
+  <div class="container">
+  <a class="navbar-brand kanit" href="#"><img class="logo" src="{{URL::asset('photomain/logo_tbh.png')}}"> ไทยแลนด์บล็อกฮับ</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -21,19 +22,19 @@
             </a>
         
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item " href="#">วิทยาศาสตร์</a>
-            <a class="dropdown-item" href="#">ไอที</a>
-            <a class="dropdown-item" href="#">ท่องเที่ยว</a>
-            <a class="dropdown-item" href="#">ธุรกิจ</a>
-            <a class="dropdown-item" href="#">การศึกษา</a>
-            <a class="dropdown-item" href="#">บันเทิง</a>
-            <a class="dropdown-item" href="#">บ้านและสวน</a>
-            <a class="dropdown-item" href="#">ข่าวสาร</a>
-            <a class="dropdown-item" href="#">อื่นๆ</a>
+            <a class="dropdown-item " href="{{ url('catagory/science') }}">วิทยาศาสตร์</a>
+            <a class="dropdown-item" href="{{url('catagory/it')}}">ไอที</a>
+            <a class="dropdown-item" href="{{url('catagory/travel')}}">ท่องเที่ยว</a>
+            <a class="dropdown-item" href="{{url('catagory/business')}}">ธุรกิจ</a>
+            <a class="dropdown-item" href="{{url('catagory/education')}}">การศึกษา</a>
+            <a class="dropdown-item" href="{{url('catagory/entertainment')}}">บันเทิง</a>
+            <a class="dropdown-item" href="{{url('catagory/homegarden')}}">บ้านและสวน</a>
+            <a class="dropdown-item" href="{{url('catagory/news')}}">ข่าวสาร</a>
+            <a class="dropdown-item" href="{{url('catagory/other')}}">อื่นๆ</a>
           </div>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="{{url('/adding')}}">เพิ่มบทความ</a>
           </li>
 
     
@@ -68,6 +69,7 @@
 
     </div>
   </div>
+</div>
 </nav>
 
 

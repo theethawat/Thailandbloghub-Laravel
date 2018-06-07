@@ -60,5 +60,26 @@ Class Thailandbloghubcontroller extends Controller
             return Redirect::to('/');
         }
 
+        public function catagorylist($cat){
+            
+            $catagoryname=array("science","it","travel","business","education","entertainment","homegarden","news","other");
+            $catagorycode=array("01sc","02it","03tr","04bi","05ed","06et","07hg","08ne","09ot");
+            $catagorythainame=array("วิทยาศาสตร์","ไอที","ท่องเที่ยว","ธุรกิจ และ เศรษฐกิจ","การศึกษา","บันเทิง","บ้านและสวน","ข่าว","อื่นๆ");
+            for($i=0;$i<9;$i++)
+            {
+                if($cat==$catagoryname[$i])
+                {
+                    $thisCatCode=$catagorycode[$i];
+                    $thisThaiName=$catagorythainame[$i];
+                }
+            }
+            $input = DB::table($thisCatCode)->orderBy('id','DESC')->get();
+            return view('catagorypage')
+                ->with('data',$input)
+                ->with('thainame',$thisThaiName);
+                
+               //return Redirect::to('/');
+        }
+
 }
 ?>

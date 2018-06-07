@@ -1,7 +1,12 @@
 @extends("template")
 @section("content")
-  <h3 class="kanit" style="margin-top:1em;">Highlight</h3><hr>
-  <h4 class="kanit headsection">วิทยาศาสตร์ (Science)</h4>
+
+<div class="header-index scihead">
+    <h3 class="kanit headsection"> <i class="fas fa-flask"></i> วิทยาศาสตร์/Science</h3>
+    <h6 class="kanit headsection font-italic"> เรียนรู้ สู่การค้นพบที่ไม่มีที่สิ้นสุด learning to the infinite discovery </h6>
+</div>
+
+    
   <div class="flex3">
   @foreach($science as $in)  
     <div class="card maincard">
@@ -17,7 +22,10 @@
   @endforeach 
 
   </div>
-  <h4 class="kanit headsection">ไอที (Information Technology)</h4>
+  <div class="header-index ithead">
+    <h3 class="kanit headsection"> <i class="fas fa-desktop"></i> ไอที/Information Technology</h3>
+    <h6 class="kanit headsection font-italic"> ต่อยอดสู่สิ่งสำคัญแห่งยุค</h6>
+</div>
   <div class="flex3">
   @foreach($it as $in)  
     <div class="card maincard">
