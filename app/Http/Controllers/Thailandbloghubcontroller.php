@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Input; //ใช้คำสั่ง Input
 use Illuminate\Support\Facades\DB;  //ใช้คำสั่ง DB หรือ Database
 use Illuminate\Support\Facades\Redirect; //ใช้คำสั่ง Redirect
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
 
 Class Thailandbloghubcontroller extends Controller
 {
@@ -49,7 +51,28 @@ Class Thailandbloghubcontroller extends Controller
             $describe=$request->input('describe');
             $user=$request->input('user');
             $userid=$request->input('userid');
-            DB::table($catagory)->insert(
+
+            $catagoryPhoto="public/".$catagory;
+            
+            if($request->file('photo') != NULL){
+                $path = $request->file('photo')->store($catagoryPhoto);
+                $visibility = Storage::getVisibility($path);
+                Storage::setVisibility($path, 'public');
+                $fileurl = Storage::url($path);
+
+                DB::table($catagory)->insert(
+                    ['title'=>$title,
+                    'blogtitle'=>$blogtitle,
+                    'url'=>$pageurl,
+                    'bloginfo'=>$describe,
+                    'auther'=>$user,
+                    'autherid'=>$userid,
+                    'photo'=>$fileurl]
+                );
+
+            }
+            else{
+                DB::table($catagory)->insert(
                 ['title'=>$title,
                 'blogtitle'=>$blogtitle,
                 'url'=>$pageurl,
@@ -57,6 +80,8 @@ Class Thailandbloghubcontroller extends Controller
                 'auther'=>$user,
                 'autherid'=>$userid]
             );
+            }
+
             return Redirect::to('/');
         }
 

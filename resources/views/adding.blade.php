@@ -1,10 +1,10 @@
-@extends("template")
+@extends("template2")
 @section("content")
     <h3 class="kanit" style="margin-top:1em;">เพิ่มบล็อก/บทความใหม่</h3><hr>
     @guest
     <p>กรุณาลงชื่อเข้าใช้ หรือ ลงทะเบียน  <a href="{{route('login')}}">คลิก</a></p>
     @else
-    <form  action="addissue" method="POST" role="form" >
+    <form  action="addissue" method="POST" role="form" enctype='multipart/form-data' >
         <label class="kanit">ชื่อบทความ</label>
         <input type="text" name="title" id="title" class="form-control" placeholder="ใส่ชื่อบทความของท่าน"required autofocus>
         <div class="form-row">
@@ -32,6 +32,7 @@
         <input type="url" name="pageurl" id="pageurl" class="form-control" placeholder="กรุณาใส่ http:// หรือ https:// ด้วย ตามหน้าเว็บของท่าน"required>
         <label class="kanit">บรรยายเล็กน้อยเกี่ยวกับบทความของท่าน</label> 
         <textarea class="form-control" name="describe" id="describe" rows="3"></textarea>
+        <input type="file" name="photo" id="photo">
         <input type="text" name="user" id="user" value="{{Auth::user()->name}}" hidden>
         <input type="text" name="userid" id="userid" value="{{Auth::user()->id}}" hidden>
         <input type="hidden" name="_token" value="{{ csrf_token() }}"><br>
