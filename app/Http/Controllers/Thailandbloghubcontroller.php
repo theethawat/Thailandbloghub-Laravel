@@ -106,5 +106,23 @@ Class Thailandbloghubcontroller extends Controller
                //return Redirect::to('/');
         }
 
+        public function memberwatch($mem){
+            $input = DB::table('users')->where('name', $mem)->first();
+
+            $science = DB::table('01sc')->orderBy('id','DESC')->where('auther', $mem)->take(2)->get();
+            $it = DB::table('02it')->orderBy('id','DESC')->where('auther', $mem)->take(2)->get();
+            $travel = DB::table('03tr')->orderBy('id','DESC')->where('auther', $mem)->take(2)->get();
+            $business = DB::table('04bi')->orderBy('id','DESC')->where('auther', $mem)->take(2)->get();
+            $education = DB::table('05ed')->orderBy('id','DESC')->where('auther', $mem)->take(2)->get();
+            $entertain = DB::table('06et')->orderBy('id','DESC')->where('auther', $mem)->take(2)->get();
+            $homegarden=DB::table('07hg')->orderBy('id','DESC')->where('auther', $mem)->take(2)->get();
+            $news=DB::table('08ne')->orderBy('id','DESC')->where('auther', $mem)->take(2)->get();
+            $other=DB::table('09ot')->orderBy('id','DESC')->where('auther', $mem)->take(2)->get();
+
+            return view('member.watch')
+                ->with('data',$input)
+                ->with('science',$science);
+        }
+
 }
 ?>

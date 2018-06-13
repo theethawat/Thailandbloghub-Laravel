@@ -24,3 +24,4 @@ Route::post('/addissue', 'ThailandbloghubController@addissue');
 
 
 Route::get('/catagory/{cat}','Thailandbloghubcontroller@catagorylist');
+Route::get('/member/{mem}','Thailandbloghubcontroller@memberwatch');
